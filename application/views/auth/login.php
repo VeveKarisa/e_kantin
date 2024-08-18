@@ -10,28 +10,22 @@
 </head>
 
 <body>
-    <div class="hero bg-base-200 min-h-screen">
+    <div class="flex h-screen w-full items-center justify-center bg-cover bg-no-repeat" style="background-image:url('../assets/kantin.jpg')">
         <div class="hero-content flex-col gap-8">
-            <div class="text-center lg:text-left">
-                <h1 class="text-5xl font-bold">Login E-Kantin!</h1>
-                <!-- <p class="py-6">
-                    Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                    quasi. In deleniti eaque aut repudiandae et a id nisi.
-                </p> -->
-            </div>
-            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <div class="card bg-white w-full max-w-sm shrink-0 shadow-2xl">
+            <h1 class="text-2xl font-bold text-amber-800 text-center pt-5">E-Kantin Demo!</h1>
                 <form action="<?= base_url('auth/login') ?>" method="post" class="card-body">
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">Username</span>
                         </label>
-                        <input type="text" name="username" placeholder="Username" class="input input-bordered" required />
+                        <input type="text" name="username" placeholder="Username" class="p-1.5 rounded-md bg-slate-800" required />
                     </div>
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="password" class="input input-bordered" required />
+                        <input type="password" name="password" placeholder="password" class="p-1.5 rounded-md bg-slate-800" required />
                         <label class="label">
                             <a href="<?= base_url('auth/register') ?>" class="label-text-alt link link-hover">Register?</a>
                         </label>
@@ -40,7 +34,7 @@
                         <p style="color: red;"><?php echo $this->session->flashdata('error'); ?></p>
                     <?php endif; ?>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Login</button>
+                        <button class="bg-amber-800 text-white outline-none py-2 rounded-md">Masuk</button>
                     </div>
                 </form>
             </div>
