@@ -42,11 +42,11 @@ class Auth extends CI_Controller
                     redirect(base_url('dashboard'));
                 } else {
                     $this->session->set_flashdata('error', 'Wrong Password');
-                    redirect(base_url('auth/login'));
+                    redirect(base_url(''));
                 }
             } else {
                 $this->session->set_flashdata('error', 'Username Not Found');
-                redirect(base_url('auth/login'));
+                redirect(base_url(''));
             }
         }
     }

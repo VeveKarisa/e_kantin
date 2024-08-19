@@ -10,34 +10,32 @@
 </head>
 
 <body>
-    <div class="flex h-screen w-full items-center justify-center bg-cover bg-no-repeat" style="background-image:url('../assets/kantin.jpg')">
-        <div class="hero-content flex-col gap-8">
-            <div class="card bg-white w-full max-w-sm shrink-0 shadow-2xl">
-            <h1 class="text-2xl font-bold text-amber-800 text-center pt-5">E-Kantin Demo!</h1>
-                <form action="<?= base_url('auth/login') ?>" method="post" class="card-body">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Username</span>
-                        </label>
-                        <input type="text" name="username" placeholder="Username" class="p-1.5 rounded-md bg-slate-800" required />
+    <div class="flex h-screen w-full items-center justify-center bg-cover bg-no-repeat" style="background-image:url('./assets/kantin.jpg')">
+        <div class="bg-white w-full max-w-md p-8 rounded-lg shadow-lg">
+            <h1 class="text-2xl font-bold text-amber-800 text-center mb-6">E-Kantin Demo!</h1>
+            <form action="<?= base_url('auth/login') ?>" method="post">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Username
+                    </label>
+                    <input type="text" id="username" name="username" placeholder="Username" class="w-full p-3 rounded-md bg-gray-200 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-800 focus:border-transparent" required />
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        Password
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="Password" class="w-full p-3 rounded-md bg-gray-200 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-800 focus:border-transparent" required />
+                    <div class="mt-2 text-right">
+                        <a href="<?= base_url('auth/register') ?>" class="text-sm text-amber-800 hover:underline">Register?</a>
                     </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Password</span>
-                        </label>
-                        <input type="password" name="password" placeholder="password" class="p-1.5 rounded-md bg-slate-800" required />
-                        <label class="label">
-                            <a href="<?= base_url('auth/register') ?>" class="label-text-alt link link-hover">Register?</a>
-                        </label>
-                    </div>
-                    <?php if ($this->session->flashdata('error')) : ?>
-                        <p style="color: red;"><?php echo $this->session->flashdata('error'); ?></p>
-                    <?php endif; ?>
-                    <div class="form-control mt-6">
-                        <button class="bg-amber-800 text-white outline-none py-2 rounded-md">Masuk</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <?php if ($this->session->flashdata('error')) : ?>
+                    <p class="text-red-500"><?php echo $this->session->flashdata('error'); ?></p>
+                <?php endif; ?>
+                <div>
+                    <button class="w-full bg-amber-800 text-white py-3 rounded-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-800 focus:ring-opacity-50">Masuk</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
